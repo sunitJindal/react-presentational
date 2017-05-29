@@ -31,7 +31,7 @@ const ${componentName} = (props) => {
 ${componentName}.propTypes = {
 };
 
-export default cssModules(${componentName}, styleCss, {allowMultiple: true});
+export default cssModules(${componentName}, styleCss, { allowMultiple: true });
 `
 
 fs.writeFileSync(`${dir}/index.js`, indexTemplate);
