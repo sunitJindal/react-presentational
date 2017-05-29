@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Create direactory and files for a presentational component",
   "main": "index.js",
+  "bin": {
+    "snippet": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
