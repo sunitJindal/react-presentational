@@ -13,7 +13,8 @@ fs.mkdirSync(dir);
 
 var indexTemplate = `import ${componentName} from './${componentName}';
 
-export default ${componentName}`;
+export default ${componentName};
+`;
 
 var cssTemplate = '.sample {}';
 
@@ -23,7 +24,7 @@ import './${componentName}.css';
 const ${componentName} = (props) => {
   return (
     <div styleName="sample">${componentName}</div>
-  )
+  );
 };
 
 ${componentName}.propTypes = {
