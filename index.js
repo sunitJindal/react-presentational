@@ -19,7 +19,8 @@ export default ${componentName};
 var cssTemplate = '.sample {}';
 
 var componentTemplate = `import React, { PropTypes } from 'react';
-import './${componentName}.css';
+import cssModules from 'react-css-modules';
+import styleCss from './${componentName}.css';
 
 const ${componentName} = (props) => {
   return (
@@ -30,7 +31,7 @@ const ${componentName} = (props) => {
 ${componentName}.propTypes = {
 };
 
-export default ${componentName};
+export default cssModules(${componentName}, styleCss, {allowMultiple: true});
 `
 
 fs.writeFileSync(`${dir}/index.js`, indexTemplate);
