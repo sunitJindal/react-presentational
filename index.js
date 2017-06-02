@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 var fs = require('fs');
+var presentationalIndexTemplate = require('./lib/templates/presentationalIndex');
+var presentationalTemplate = require('./lib/templates/presentational');
+var cssTemplate = require('./lib/templates/css');
 
 var componentName = process.argv[2];
 
@@ -11,28 +14,11 @@ if (!componentName) {
 var dir = './' + componentName;
 fs.mkdirSync(dir);
 
-var indexTemplate = `import ${componentName} from './${componentName}';
+var indexTemplate = presentationalIndexTemplate(componentName);
 
-export default ${componentName};
-`;
+var cssTemplate = cssTemplate(componentName);
 
-var cssTemplate = '.sample {}';
-
-var componentTemplate = `import React, { PropTypes } from 'react';
-import cssModules from 'react-css-modules';
-import styleCss from './${componentName}.css';
-
-const ${componentName} = (props) => {
-  return (
-    <div styleName="sample">${componentName}</div>
-  );
-};
-
-${componentName}.propTypes = {
-};
-
-export default cssModules(${componentName}, styleCss, { allowMultiple: true });
-`
+var componentTemplate = presentationalTemplate(componentName);
 
 fs.writeFileSync(`${dir}/index.js`, indexTemplate);
 fs.writeFileSync(`${dir}/${componentName}.css`, cssTemplate);
