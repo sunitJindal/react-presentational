@@ -1,6 +1,6 @@
 # react-presentational
 
-[![Coverage Status](https://coveralls.io/repos/github/sunitJindal/react-presentational/badge.svg)](https://coveralls.io/github/sunitJindal/react-presentational)
+[![Coverage Status](https://coveralls.io/repos/github/sunitJindal/react-presentational/badge.svg?branch=master)](https://coveralls.io/github/sunitJindal/react-presentational?branch=master)
 
 
 Simple module to create basic prescentational component for project. In case you are using concept of
