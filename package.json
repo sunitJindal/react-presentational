@@ -7,7 +7,7 @@
     "react-presentational": "./index.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "repository": {
