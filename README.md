@@ -1,5 +1,8 @@
 # react-presentational
 
+[![Coverage Status](https://coveralls.io/repos/github/sunitJindal/react-presentational/badge.svg)](https://coveralls.io/github/sunitJindal/react-presentational)
+
+
 Simple module to create basic prescentational component for project. In case you are using concept of
 containers and components in your project, there's too much basic structure that you need to create over and over. This module
 tries to reduce that wasted effort.
