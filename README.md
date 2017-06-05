@@ -17,7 +17,7 @@ tries to reduce that wasted effort.
 
 or
 
-``yarn gloabl add react-presentational``
+``yarn global add react-presentational``
 
 ## How to use
 Lets assume this is the directory structure of your project
