@@ -7,12 +7,16 @@ var cssTemplate = require('./lib/templates/css');
 var presentationalTestTemplate = require('./lib/templates/presentationalTest');
 
 var componentName = process.argv[2];
+var flat = (process.argv.indexOf('--flat') > -1);
 
 if (!componentName) {
   throw new Error('Component name is required');
 }
 
-var dir = './' + componentName;
+var dir = './';
+if (!flat) {
+  dir =+ componentName;
+}
 fs.mkdirSync(dir);
 
 var indexTemplate = presentationalIndexTemplate(componentName);
