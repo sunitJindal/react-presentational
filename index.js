@@ -16,8 +16,8 @@ if (!componentName) {
 var dir = './';
 if (!flat) {
   dir =+ componentName;
+  fs.mkdirSync(dir);
 }
-fs.mkdirSync(dir);
 
 var indexTemplate = presentationalIndexTemplate(componentName);
 
