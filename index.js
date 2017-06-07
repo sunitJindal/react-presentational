@@ -1,4 +1,4 @@
-var presentationalCreator = require('./lib')
+var presentationalCreator = require('./lib/presentationalCreator')
 
 module.exports = presentationalCreator;
 
