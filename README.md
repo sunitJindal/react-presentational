@@ -10,7 +10,10 @@ tries to reduce that wasted effort.
 
 > NOTE:
 > This module is opinionated. It assumes you are using [react-css-modules](https://github.com/gajus/react-css-modules).
+>
 > Plus you are following the concept of containers and components to manage your code base for React.
+>
+> For testing [Jest](https://facebook.github.io/jest/) is used along with [Enzyme](http://airbnb.io/enzyme/)
 
 ## Setup
 ``npm i react-presentational -g``
@@ -29,10 +32,27 @@ app
   |- containers
 ```
 
-Lets assume, we want to create a component named `Badge`. Go inside the `components` directory from your terminal and
+Lets assume, we want to create a component named `Badge`.
+### Using CLI
+Go inside the `components` directory from your terminal and
 type this command
 ``react-presentational Badge``
 
+#### Options
+```
+react-presentational componentName [options]
+
+Basic configuration:
+  --flat     Create files at CWD. No directory is created
+```
+
+### Using module system
+```
+const reactPresentational = require('react-presentational');
+reactPresentational('Bagde');
+```
+
+## What happens after command is executed?
 New directory structure would be:
 ```
 app
@@ -42,11 +62,12 @@ app
     |- Badge
       |- index.js
       |- Badge.js
+      |- Badge.spec.js
       |- Badge.css
   |- containers
 ```
 
-This command created 1 directory and 3 files within that directory. Below is the sample content of these files
+This command created 1 directory and 4 files within that directory. Below is the sample content of these files
 #### Badge.css
 ```
 .sample {}
@@ -69,6 +90,19 @@ Badge.propTypes = {
 export default Badge;
 ```
 
+### Badge.spec.js
+```
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
+import Badge from './Badge';
+
+describe('Badge test', () => {
+  it('should render component', () => {
+    const wrapper = shallow(<Badge />);
+    expect(wrapper.find('.Badge').length).toBe(1);
+  });
+});
+```
 ### index.js
 ```
 import Badge from './Badge';
