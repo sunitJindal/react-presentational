@@ -1,6 +1,6 @@
 {
   "name": "react-presentational",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Create direactory and files for a presentational component",
   "main": "index.js",
   "bin": {

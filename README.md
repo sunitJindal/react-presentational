@@ -40,10 +40,11 @@ type this command
 
 #### Options
 ```
-react-presentational componentName [options]
+react-presentational -n componentName [options]
 
 Basic configuration:
-  --flat     Create files at CWD. No directory is created
+  -n, --name  Name of the component
+  --flat      Create files at CWD. No directory is created
 ```
 
 ### Using module system
