@@ -1,6 +1,3 @@
-var presentationalCreator = require('./lib/presentationalCreator')
+const presentationalCreator = require('./lib/presentationalCreator')
 
 module.exports = presentationalCreator;
-
-
-
